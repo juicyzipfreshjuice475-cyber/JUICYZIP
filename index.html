@@ -16,7 +16,7 @@
             background-color: #111;
         }
 
-        /* Hero Section with Full Background */
+        /* Hero Section with Animated Background */
         .hero-section {
             background-image: url('background.jpeg');
             background-size: cover;
@@ -27,6 +27,30 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            animation: bgZoom 20s infinite alternate;
+        }
+
+        @keyframes bgZoom {
+            0% {
+                background-size: 100% 100%;
+            }
+            100% {
+                background-size: 110% 110%;
+            }
+        }
+
+        /* Waterfall / Subtle Overlay Movement Effect */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            pointer-events: none;
         }
 
         header {
@@ -69,6 +93,7 @@
             align-items: center;
             text-align: center;
             padding: 100px 20px 20px 20px;
+            z-index: 10;
         }
 
         .logo-container img {
@@ -76,6 +101,16 @@
             max-width: 100%;
             height: auto;
             margin-bottom: 10px;
+            animation: floatLogo 3s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
         h1 {
@@ -92,6 +127,13 @@
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
         }
 
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .btn {
             background-color: #ff9900;
             color: #fff;
@@ -104,10 +146,19 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             text-decoration: none;
             display: inline-block;
+            transition: background 0.3s;
         }
 
         .btn:hover {
             background-color: #e68a00;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
         }
 
         /* Flavours Section */
@@ -140,6 +191,9 @@
             width: 300px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .flavour-card img {
@@ -160,8 +214,24 @@
         .flavour-card p {
             font-size: 14px;
             color: #ddd;
-            margin-bottom: 0;
+            margin-bottom: 15px;
             text-shadow: none;
+        }
+
+        .order-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #1ebe57;
         }
 
         /* Reviews Section */
@@ -270,11 +340,14 @@
 
         <div class="hero-content">
             <div class="logo-container">
-                <img src="logo.jpeg" alt="JUICY ZIP Logo">
+                <img src="logo.png" alt="JUICY ZIP Logo">
             </div>
             <h1>JUICY ZIP</h1>
             <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
-            <a href="#flavours" class="btn">Explore Flavours</a>
+            <div class="btn-group">
+                <a href="#flavours" class="btn">Explore Flavours</a>
+                <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20order%20JuicyZip%20drinks!" target="_blank" class="btn btn-whatsapp">Order via WhatsApp</a>
+            </div>
         </div>
     </div>
 
@@ -285,23 +358,32 @@
             
             <!-- Flavour 1: Blue Pop -->
             <div class="flavour-card">
-                <img src="blueberry.png" alt="Blue Pop">
-                <h3>Blue Pop</h3>
-                <p>An icy wave of fresh coolness melting on your tongue.</p>
+                <div>
+                    <img src="blueberry.png" alt="Blue Pop">
+                    <h3>Blue Pop</h3>
+                    <p>An icy wave of fresh coolness melting on your tongue.</p>
+                </div>
+                <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Blue%20Pop%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
 
             <!-- Flavour 2: Lemon Splash -->
             <div class="flavour-card">
-                <img src="lemon.png" alt="Lemon Splash">
-                <h3>Lemon Splash</h3>
-                <p>A crystal-clear splash of refreshing zesty lemon.</p>
+                <div>
+                    <img src="lemon.png" alt="Lemon Splash">
+                    <h3>Lemon Splash</h3>
+                    <p>A crystal-clear splash of refreshing zesty lemon.</p>
+                </div>
+                <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Lemon%20Splash%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
 
             <!-- Flavour 3: Grape Lush -->
             <div class="flavour-card">
-                <img src="grape.png" alt="Grape Lush">
-                <h3>Grape Lush</h3>
-                <p>The chilling essence of sweet grapes spreading across your palate.</p>
+                <div>
+                    <img src="grape.png" alt="Grape Lush">
+                    <h3>Grape Lush</h3>
+                    <p>The chilling essence of sweet grapes spreading across your palate.</p>
+                </div>
+                <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Grape%20Lush%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
 
         </div>

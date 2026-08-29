@@ -16,12 +16,13 @@
             background-color: #111;
         }
 
-        /* Hero Section with Animated Background */
+        /* Hero Section with Enhanced 3D/Depth Background Effect */
         .hero-section {
-            background-image: url('background.jpeg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('background.jpeg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+            background-attachment: fixed; /* Creates a stunning 3D depth/parallax effect */
             height: 100vh;
             width: 100%;
             display: flex;
@@ -29,38 +30,18 @@
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            animation: bgZoom 20s infinite alternate;
-        }
-
-        @keyframes bgZoom {
-            0% {
-                background-size: 100% 100%;
-            }
-            100% {
-                background-size: 110% 110%;
-            }
-        }
-
-        /* Waterfall / Subtle Overlay Movement Effect */
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-            pointer-events: none;
         }
 
         header {
             background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
             padding: 15px 0;
             text-align: center;
             width: 100%;
             position: fixed;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav ul {
@@ -79,6 +60,7 @@
             color: #fff;
             font-weight: bold;
             font-size: 16px;
+            transition: color 0.3s;
         }
 
         nav a:hover {
@@ -101,6 +83,7 @@
             max-width: 100%;
             height: auto;
             margin-bottom: 10px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
             animation: floatLogo 3s ease-in-out infinite;
         }
 
@@ -114,10 +97,11 @@
         }
 
         h1 {
-            font-size: 38px;
+            font-size: 42px;
             color: #fff;
             margin: 10px 0;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+            letter-spacing: 2px;
         }
 
         p {
@@ -143,14 +127,15 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
             text-decoration: none;
             display: inline-block;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
             background-color: #e68a00;
+            transform: translateY(-2px);
         }
 
         .btn-whatsapp {
@@ -163,83 +148,98 @@
 
         /* Flavours Section */
         .flavours-section {
-            padding: 80px 20px;
-            background-color: #1a1a1a;
+            padding: 90px 20px;
+            background: linear-gradient(to bottom, #111, #1a1a1a);
             color: #fff;
             text-align: center;
         }
 
         .flavours-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
+            font-size: 38px;
+            margin-bottom: 50px;
             color: #ff9900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .flavours-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            max-width: 1100px;
+            gap: 35px;
+            max-width: 1150px;
             margin: 0 auto;
         }
 
         .flavour-card {
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            background: rgba(42, 42, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            width: 320px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .flavour-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 153, 0, 0.2);
         }
 
         .flavour-card img {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 15px;
             background-color: #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
         }
 
         .flavour-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 12px;
             color: #ff9900;
         }
 
         .flavour-card p {
             font-size: 14px;
             color: #ddd;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-shadow: none;
+            line-height: 1.5;
         }
 
         .order-btn {
             background-color: #25D366;
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 10px 18px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
             display: inline-block;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
         }
 
         .order-btn:hover {
             background-color: #1ebe57;
+            transform: scale(1.05);
         }
 
         /* Reviews Section */
         .reviews-section {
-            padding: 80px 20px;
-            background-color: #222;
+            padding: 90px 20px;
+            background-color: #1a1a1a;
             color: #fff;
             text-align: center;
+            border-top: 1px solid #222;
         }
 
         .reviews-section h2 {
@@ -254,31 +254,38 @@
         }
 
         .review-form {
-            max-width: 500px;
+            max-width: 520px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             gap: 15px;
             text-align: left;
-            background-color: #2a2a2a;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            background-color: #252525;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .review-form label {
             font-size: 14px;
             font-weight: bold;
+            color: #ccc;
         }
 
         .review-form input, .review-form textarea {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #555;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #444;
             background-color: #111;
             color: #fff;
             font-size: 16px;
             width: 100%;
+        }
+
+        .review-form input:focus, .review-form textarea:focus {
+            border-color: #ff9900;
+            outline: none;
         }
 
         .review-form button {
@@ -289,10 +296,10 @@
 
         /* Footer Section with Contact Info */
         footer {
-            background-color: #0b0b0b;
+            background-color: #080808;
             color: #aaa;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 14px;
             border-top: 1px solid #222;
         }
@@ -300,17 +307,17 @@
         footer h3 {
             color: #ff9900;
             margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 22px;
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 6px 0;
             text-shadow: none;
-            color: #ccc;
+            color: #bbb;
         }
 
         .footer-contact {
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .footer-contact a {
@@ -331,7 +338,7 @@
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#flavours">Flavours</a></li>
+                    <li><a href="#flavours">Explore Fruit Juice</a></li>
                     <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -345,15 +352,15 @@
             <h1>JUICY ZIP</h1>
             <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
             <div class="btn-group">
-                <a href="#flavours" class="btn">Explore Flavours</a>
+                <a href="#flavours" class="btn">Explore Fruit Juice</a>
                 <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20order%20JuicyZip%20drinks!" target="_blank" class="btn btn-whatsapp">Order via WhatsApp</a>
             </div>
         </div>
     </div>
 
-    <!-- Flavours Section -->
+    <!-- Explore Fruit Juice Section -->
     <section id="flavours" class="flavours-section">
-        <h2>Our Refreshing Flavours</h2>
+        <h2>Explore Fruit Juice</h2>
         <div class="flavours-grid">
             
             <!-- Flavour 1: Blue Pop -->
@@ -361,7 +368,7 @@
                 <div>
                     <img src="blueberry.png" alt="Blue Pop">
                     <h3>Blue Pop</h3>
-                    <p>An icy wave of fresh coolness melting on your tongue.</p>
+                    <p>The tiny chill that melts on your tongue.</p>
                 </div>
                 <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Blue%20Pop%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
@@ -371,7 +378,7 @@
                 <div>
                     <img src="lemon.png" alt="Lemon Splash">
                     <h3>Lemon Splash</h3>
-                    <p>A crystal-clear splash of refreshing zesty lemon.</p>
+                    <p>A zesty lemon splash in crystal-clear water.</p>
                 </div>
                 <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Lemon%20Splash%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
@@ -381,7 +388,7 @@
                 <div>
                     <img src="grape.png" alt="Grape Lush">
                     <h3>Grape Lush</h3>
-                    <p>The chilling essence of sweet grapes spreading across your palate.</p>
+                    <p>The cool grape refreshment that spreads across your tongue.</p>
                 </div>
                 <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Grape%20Lush%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>

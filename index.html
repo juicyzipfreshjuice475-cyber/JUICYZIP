@@ -4,166 +4,293 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JuicyZip - Ultimate Fruit Juice</title>
-    
     <style>
-        * {
-            box-sizing: border-box;
+        body, html {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
-        body, html {
+        /* Hero Section with Full Background */
+        .hero-section {
+            background-image: url('background_theme.png'); /* ബാക്ക്ഗ്രൗണ്ട് തീം ഇമേജ് */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
             width: 100%;
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        .background-container {
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
             position: fixed;
             top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
+            z-index: 1000;
         }
 
-        .bg-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-        .content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            z-index: 1;
+        nav li {
+            display: inline-block;
+            margin: 0 15px;
         }
 
-        nav {
-            background: rgba(10, 34, 64, 0.75);
-            backdrop-filter: blur(5px);
-            padding: 15px 0;
-            width: 100%;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .nav-links li a {
+        nav a {
             text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
+            color: #fff;
+            font-weight: bold;
             font-size: 16px;
-            transition: color 0.3s ease;
         }
 
-        .nav-links li a:hover {
-            color: #ffcc00;
+        nav a:hover {
+            color: #ff9900;
         }
 
-        .hero-section {
+        main {
             flex: 1;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 120px 20px 50px 20px;
         }
 
-        .logo-container {
-            max-width: 550px;
-            width: 90%;
-            margin-bottom: 20px;
+        .content-box {
+            max-width: 600px;
+            padding: 30px;
         }
 
-        .logo-image {
-            width: 100%;
+        .logo-container img {
+            width: 280px;
+            max-width: 100%;
             height: auto;
-            filter: drop-shadow(0px 8px 16px rgba-drop(0, 0, 0, 0.4));
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
+            margin-bottom: 15px;
         }
 
-        .tagline {
-            color: #ffffff;
-            font-size: 20px;
-            margin-bottom: 30px;
-            font-weight: 600;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+        h1 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        .cta-button {
-            background: linear-gradient(135deg, #ffcc00, #ff9900);
-            color: #0a2240;
-            border: none;
-            padding: 14px 35px;
+        p {
             font-size: 18px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .btn {
+            background-color: #ff9900;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #ffd633, #ffaa00);
+        .btn:hover {
+            background-color: #e68a00;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 15px;
-            }
-            .nav-links li a {
-                font-size: 14px;
-            }
-            .tagline {
-                font-size: 16px;
-            }
-            .logo-container {
-                max-width: 320px;
-            }
+        /* Flavours Section */
+        .flavours-section {
+            padding: 80px 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+
+        .flavours-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #ff9900;
+        }
+
+        .flavours-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .flavour-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .flavour-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .flavour-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #ff9900;
+        }
+
+        .flavour-card p {
+            font-size: 14px;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 80px 20px;
+            background-color: #2e2e2e;
+            color: #fff;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ff9900;
+        }
+
+        .review-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .review-form label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .review-form input, .review-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .review-form button {
+            align-self: center;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Background image (Change 'background.jpg' to 'background.jpeg' if your image is JPEG) -->
-    <div class="background-container">
-        <img src="background.jpg" alt="JuicyZip Background" class="bg-image">
-    </div>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#flavours">Flavours</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="content">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <main class="hero-section">
-            <div class="logo-container">
-                <!-- Logo image (Change to logo.jpg if your logo is a JPEG file) -->
-                <img src="logo.png" alt="JuicyZip Logo" class="logo-image">
+        <main>
+            <div class="content-box">
+                <div class="logo-container">
+                    <img src="logo.png" alt="JUICY ZIP Logo">
+                </div>
+                <h1>JUICY ZIP</h1>
+                <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
+                <a href="#flavours" class="btn">Explore Flavours</a>
             </div>
-            
-            <p class="tagline">Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
-            
-            <button class="cta-button">Explore Flavours</button>
         </main>
     </div>
+
+    <!-- Flavours Section -->
+    <section id="flavours" class="flavours-section">
+        <h2>Our Refreshing Flavours</h2>
+        <div class="flavours-grid">
+            
+            <!-- Flavour 1: Blue Pop -->
+            <div class="flavour-card">
+                <!-- ഇമേജ് മാറ്റാൻ താഴെ കാണുന്ന src മാറ്റുക (ഉദാഹരണത്തിന്: blueberry.png) -->
+                <img src="blueberry.png" alt="Blue Pop">
+                <h3>Blue Pop</h3>
+                <p>An icy wave of fresh coolness melting on your tongue.</p>
+            </div>
+
+            <!-- Flavour 2: Lemon Splash -->
+            <div class="flavour-card">
+                <!-- ഇമേജ് മാറ്റാൻ താഴെ കാണുന്ന src മാറ്റുക (ഉദാഹരണത്തിന്: lemon.png) -->
+                <img src="lemon.png" alt="Lemon Splash">
+                <h3>Lemon Splash</h3>
+                <p>A crystal-clear splash of refreshing zesty lemon.</p>
+            </div>
+
+            <!-- Flavour 3: Grape Lish -->
+            <div class="flavour-card">
+                <!-- ഇമേജ് മാറ്റാൻ താഴെ കാണുന്ന src മാറ്റുക (ഉദാഹരണത്തിന്: grape.png) -->
+                <img src="grape.png" alt="Grape Lish">
+                <h3>Grape Lish</h3>
+                <p>The chilling essence of sweet grapes spreading across your palate.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <h2>Customer Reviews</h2>
+        <p>We would love to hear your thoughts about JuicyZip!</p>
+        
+        <form class="review-form" action="#" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="review">Your Review / Feedback:</label>
+            <textarea id="review" name="review" rows="4" placeholder="Share your experience..." required></textarea>
+
+            <button type="submit" class="btn">Submit Review</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 JUICY ZIP. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

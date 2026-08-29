@@ -13,7 +13,6 @@
         }
 
         body {
-            background: radial-gradient(circle at center, #1b4965 0%, #0b132b 100%);
             color: #ffffff;
             overflow-x: hidden;
             min-height: 100vh;
@@ -47,58 +46,7 @@
             color: #ffb703;
         }
 
-        /* --- Juice Background Animation --- */
-        .juice-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .drop {
-            position: absolute;
-            background: #ffb703;
-            border-radius: 50%;
-            animation: fallDrop linear infinite;
-            opacity: 0.8;
-        }
-
-        @keyframes fallDrop {
-            0% {
-                transform: translateY(-5vh) scale(0.8);
-                opacity: 0;
-            }
-            20% { opacity: 0.9; }
-            100% {
-                transform: translateY(105vh) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        .bubble {
-            position: absolute;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,183,3,0.5));
-            border-radius: 50%;
-            animation: riseBubble ease-in-out infinite;
-        }
-
-        @keyframes riseBubble {
-            0% {
-                transform: translateY(105vh) scale(0.5);
-                opacity: 0;
-            }
-            50% { opacity: 0.7; }
-            100% {
-                transform: translateY(-10vh) scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        /* --- Hero Section with Fixed White 3D Text & Blue Background --- */
+        /* --- Hero Section with Full Logo Background --- */
         .hero {
             position: relative;
             z-index: 10;
@@ -109,6 +57,11 @@
             justify-content: center;
             text-align: center;
             padding: 0 2rem;
+            /* ലോഗോ ചിത്രം ബാക്ക്ഗ്രൗണ്ടിൽ ഫുൾ ആയി സെറ്റ് ചെയ്യാൻ */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('logo.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .hero h1 {
@@ -116,7 +69,6 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 4px;
-            /* Pure White Text with Deep Blue 3D Layer Effect */
             color: #ffffff;
             text-shadow: 
                 2px 2px 0px #0077b6,
@@ -158,7 +110,7 @@
             position: relative;
             z-index: 10;
             padding: 6rem 2rem;
-            background: rgba(11, 19, 43, 0.85);
+            background: rgba(11, 19, 43, 0.95);
             backdrop-filter: blur(12px);
             text-align: center;
         }
@@ -265,26 +217,8 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <div class="juice-bg">
-        <div class="drop" style="width: 12px; height: 18px; left: 10%; animation-duration: 3s; animation-delay: 0s;"></div>
-        <div class="drop" style="width: 15px; height: 22px; left: 30%; animation-duration: 3.8s; animation-delay: 1.2s;"></div>
-        <div class="drop" style="width: 10px; height: 15px; left: 70%; animation-duration: 3.2s; animation-delay: 0.5s;"></div>
-        <div class="drop" style="width: 16px; height: 24px; left: 90%; animation-duration: 4.2s; animation-delay: 1.8s;"></div>
-
-        <div class="bubble" style="width: 35px; height: 35px; left: 15%; animation-duration: 5.5s; animation-delay: 0.3s;"></div>
-        <div class="bubble" style="width: 50px; height: 50px; left: 50%; animation-duration: 6.5s; animation-delay: 1.5s;"></div>
-        <div class="bubble" style="width: 25px; height: 25px; left: 85%; animation-duration: 5s; animation-delay: 0.8s;"></div>
-    </div>
-
+    <!-- ഹീറോ സെക്ഷൻ (ഫുൾ ലോഗോ ബാക്ക്ഗ്രൗണ്ട്) -->
     <section class="hero" id="home">
-.hero {
-    background-color: #0b7a9e; /* ലോഗോയിലുള്ളതുപോലെയുള്ള മനോഹരമായ ആക്വാ/ടർക്കോയ്സ് നീല കളർ */
-    background-image: linear-gradient(135deg, #0b7a9e 0%, #104f6b 100%);
-    color: #ffffff;
-    text-align: center;
-    padding: 80px 20px;
-}
-        <img src="logo.jpeg" alt="JuicyZip Logo" style="width: 220px; height: auto; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: block; margin: 0                 auto 20px auto;">
         <h1>JuicyZip</h1>
         <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
         <a href="#products" class="cta-btn">Explore Flavours</a>

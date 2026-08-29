@@ -19,7 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* Background image container fixed to full screen */
         .background-container {
             position: fixed;
             top: 0;
@@ -35,7 +34,6 @@
             object-fit: cover;
         }
 
-        /* Website content container layout */
         .content {
             position: relative;
             width: 100%;
@@ -45,7 +43,6 @@
             z-index: 1;
         }
 
-        /* Navigation bar styling */
         nav {
             background: rgba(10, 34, 64, 0.75);
             backdrop-filter: blur(5px);
@@ -73,7 +70,6 @@
             color: #ffcc00;
         }
 
-        /* Main hero section */
         .hero-section {
             flex: 1;
             display: flex;
@@ -84,7 +80,6 @@
             padding: 20px;
         }
 
-        /* Centered logo container */
         .logo-container {
             max-width: 550px;
             width: 90%;
@@ -94,19 +89,19 @@
         .logo-image {
             width: 100%;
             height: auto;
-            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.4));
+            filter: drop-shadow(0px 8px 16px rgba-drop(0, 0, 0, 0.4));
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
         }
 
-        /* Tagline styling */
         .tagline {
             color: #ffffff;
             font-size: 20px;
             margin-bottom: 30px;
             font-weight: 600;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
         }
 
-        /* Button styling */
         .cta-button {
             background: linear-gradient(135deg, #ffcc00, #ff9900);
             color: #0a2240;
@@ -125,7 +120,6 @@
             background: linear-gradient(135deg, #ffd633, #ffaa00);
         }
 
-        /* Mobile responsive adjustments */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 15px;
@@ -144,12 +138,11 @@
 </head>
 <body>
 
-    <!-- Background JPEG image -->
+    <!-- Background image (Change 'background.jpg' to 'background.jpeg' if your image is JPEG) -->
     <div class="background-container">
         <img src="background.jpg" alt="JuicyZip Background" class="bg-image">
     </div>
 
-    <!-- Main website content -->
     <div class="content">
         <nav>
             <ul class="nav-links">
@@ -162,8 +155,8 @@
 
         <main class="hero-section">
             <div class="logo-container">
-                <!-- Center Logo Image -->
-                <img src="logo.jpeg" alt="JuicyZip Logo" class="logo-image">
+                <!-- Logo image (Change to logo.jpg if your logo is a JPEG file) -->
+                <img src="logo.png" alt="JuicyZip Logo" class="logo-image">
             </div>
             
             <p class="tagline">Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>

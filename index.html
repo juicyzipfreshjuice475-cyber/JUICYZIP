@@ -16,9 +16,9 @@
             background-color: #111;
         }
 
-        /* Hero Section with Animated Waterfall & 3D Effect */
+        /* Stable and Clear Hero Section with PNG Background */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('background.jpeg');
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)), url('background.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -29,57 +29,6 @@
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            animation: waterFlow 15s ease-in-out infinite alternate;
-        }
-
-        /* Waterfall subtle moving background animation */
-        @keyframes waterFlow {
-            0% {
-                background-position: center top;
-            }
-            100% {
-                background-position: center bottom;
-            }
-        }
-
-        /* Falling Fruits Animation Overlay */
-        .falling-fruit {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: fallAndSplash 4s linear infinite;
-            z-index: 5;
-            opacity: 0.8;
-        }
-
-        .fruit-1 {
-            background-image: url('lemon.png');
-            left: 15%;
-            animation-duration: 5s;
-            animation-delay: 0s;
-        }
-
-        .fruit-2 {
-            background-image: url('blueberry.png');
-            left: 75%;
-            animation-duration: 4s;
-            animation-delay: 2s;
-        }
-
-        @keyframes fallAndSplash {
-            0% {
-                transform: translateY(-50px) rotate(0deg);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(90vh) rotate(360deg);
-                opacity: 0;
-            }
         }
 
         header {
@@ -134,16 +83,6 @@
             height: auto;
             margin-bottom: 10px;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
-            animation: floatLogo 3s ease-in-out infinite;
-        }
-
-        @keyframes floatLogo {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
         }
 
         h1 {
@@ -384,10 +323,6 @@
 
     <!-- Hero Section -->
     <div class="hero-section">
-        <!-- Falling Fruit Animations -->
-        <div class="falling-fruit fruit-1"></div>
-        <div class="falling-fruit fruit-2"></div>
-
         <header>
             <nav>
                 <ul>

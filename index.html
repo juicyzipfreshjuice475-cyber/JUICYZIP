@@ -46,7 +46,7 @@
             color: #ffb703;
         }
 
-        /* --- Hero Section with New Waterfall Background --- */
+        /* --- Hero Section with Waterfall Background & Central Logo --- */
         .hero {
             position: relative;
             z-index: 10;
@@ -57,44 +57,31 @@
             justify-content: center;
             text-align: center;
             padding: 0 2rem;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('1000112189.jpg');
+            /* ബാക്ക്ഗ്രൗണ്ടിൽ വെള്ളച്ചാട്ടമുള്ള ചിത്രം വരുന്നു */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('1000112189_3.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        .hero h1 {
-            font-size: 5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #ffffff;
-            text-shadow: 
-                2px 2px 0px #0077b6,
-                4px 4px 0px #03045e,
-                6px 6px 0px #023e8a,
-                0 10px 25px rgba(0, 0, 0, 0.9),
-                0 0 20px rgba(255, 255, 255, 0.6);
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            color: #e0fbfc;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            font-weight: 600;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+        /* നടുവിലായി വരുന്ന ലോഗോ/ഗ്രാഫിക്സ് ചിത്രം */
+        .hero-logo {
+            max-width: 400px;
+            width: 85%;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
         }
 
         .cta-btn {
             background: linear-gradient(135deg, #fb8500, #ffb703);
             color: #0b132b;
-            padding: 1rem 3rem;
+            padding: 0.9rem 2.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             box-shadow: 0 10px 25px rgba(251, 133, 0, 0.6);
             transition: all 0.3s ease;
         }
@@ -109,7 +96,7 @@
             position: relative;
             z-index: 10;
             padding: 6rem 2rem;
-            background: rgba(11, 19, 43, 0.92);
+            background: rgba(11, 19, 43, 0.95);
             backdrop-filter: blur(12px);
             text-align: center;
         }
@@ -216,11 +203,10 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Hero Section with New Background -->
+    <!-- Hero Section with Background and Centered Logo -->
     <section class="hero" id="home">
-        <h1>JuicyZip</h1>
-        <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
-        <a href="#products" class="cta-btn">Explore Flavours</a>
+        <img src="1000112189_3.jpg" alt="JuicyZip Logo" class="hero-logo">
+        <a href="#products" class="cta-btn">Explore Fruit Juice</a>
     </section>
 
     <section class="products-section" id="products">

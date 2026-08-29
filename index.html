@@ -16,13 +16,12 @@
             background-color: #111;
         }
 
-        /* Hero Section with Enhanced 3D/Depth Background Effect */
+        /* Hero Section with Animated Waterfall & 3D Effect */
         .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('background.jpeg');
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('background.jpeg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            background-attachment: fixed; /* Creates a stunning 3D depth/parallax effect */
             height: 100vh;
             width: 100%;
             display: flex;
@@ -30,6 +29,57 @@
             justify-content: space-between;
             position: relative;
             overflow: hidden;
+            animation: waterFlow 15s ease-in-out infinite alternate;
+        }
+
+        /* Waterfall subtle moving background animation */
+        @keyframes waterFlow {
+            0% {
+                background-position: center top;
+            }
+            100% {
+                background-position: center bottom;
+            }
+        }
+
+        /* Falling Fruits Animation Overlay */
+        .falling-fruit {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: fallAndSplash 4s linear infinite;
+            z-index: 5;
+            opacity: 0.8;
+        }
+
+        .fruit-1 {
+            background-image: url('lemon.png');
+            left: 15%;
+            animation-duration: 5s;
+            animation-delay: 0s;
+        }
+
+        .fruit-2 {
+            background-image: url('blueberry.png');
+            left: 75%;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        @keyframes fallAndSplash {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(90vh) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         header {
@@ -334,6 +384,10 @@
 
     <!-- Hero Section -->
     <div class="hero-section">
+        <!-- Falling Fruit Animations -->
+        <div class="falling-fruit fruit-1"></div>
+        <div class="falling-fruit fruit-2"></div>
+
         <header>
             <nav>
                 <ul>

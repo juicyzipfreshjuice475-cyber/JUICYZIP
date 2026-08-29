@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JuicyZip - Ultimate Fruit Juice</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
+            background-color: #111;
         }
 
         /* Hero Section with Full Background */
         .hero-section {
-            background-image: url('background_theme.png'); /* ബാക്ക്ഗ്രൗണ്ട് തീം ഇമേജ് */
+            background-image: url('background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            min-height: 100vh;
+            height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 15px 0;
             text-align: center;
             width: 100%;
@@ -56,39 +61,35 @@
             color: #ff9900;
         }
 
-        main {
+        .hero-content {
             flex: 1;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 20px 50px 20px;
-        }
-
-        .content-box {
-            max-width: 600px;
-            padding: 30px;
+            padding: 100px 20px 20px 20px;
         }
 
         .logo-container img {
-            width: 280px;
+            width: 240px;
             max-width: 100%;
             height: auto;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 42px;
+            font-size: 38px;
             color: #fff;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 10px 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             color: #fff;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
         }
 
         .btn {
@@ -100,7 +101,7 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             text-decoration: none;
             display: inline-block;
         }
@@ -137,20 +138,21 @@
             border-radius: 10px;
             padding: 20px;
             width: 300px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             text-align: center;
         }
 
         .flavour-card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 15px;
+            background-color: #444;
         }
 
         .flavour-card h3 {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 10px;
             color: #ff9900;
         }
@@ -158,21 +160,27 @@
         .flavour-card p {
             font-size: 14px;
             color: #ddd;
-            margin-bottom: 15px;
+            margin-bottom: 0;
+            text-shadow: none;
         }
 
         /* Reviews Section */
         .reviews-section {
             padding: 80px 20px;
-            background-color: #2e2e2e;
+            background-color: #222;
             color: #fff;
             text-align: center;
         }
 
         .reviews-section h2 {
             font-size: 36px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             color: #ff9900;
+        }
+
+        .reviews-section > p {
+            text-shadow: none;
+            margin-bottom: 30px;
         }
 
         .review-form {
@@ -182,6 +190,10 @@
             flex-direction: column;
             gap: 15px;
             text-align: left;
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
         }
 
         .review-form label {
@@ -193,22 +205,51 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #555;
-            background-color: #1a1a1a;
+            background-color: #111;
             color: #fff;
             font-size: 16px;
+            width: 100%;
         }
 
         .review-form button {
             align-self: center;
             margin-top: 10px;
+            width: 100%;
         }
 
+        /* Footer Section with Contact Info */
         footer {
-            background-color: #111;
+            background-color: #0b0b0b;
             color: #aaa;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 20px;
             font-size: 14px;
+            border-top: 1px solid #222;
+        }
+
+        footer h3 {
+            color: #ff9900;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            text-shadow: none;
+            color: #ccc;
+        }
+
+        .footer-contact {
+            margin-top: 15px;
+        }
+
+        .footer-contact a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -227,16 +268,14 @@
             </nav>
         </header>
 
-        <main>
-            <div class="content-box">
-                <div class="logo-container">
-                    <img src="logo.png" alt="JUICY ZIP Logo">
-                </div>
-                <h1>JUICY ZIP</h1>
-                <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
-                <a href="#flavours" class="btn">Explore Flavours</a>
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="JUICY ZIP Logo">
             </div>
-        </main>
+            <h1>JUICY ZIP</h1>
+            <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
+            <a href="#flavours" class="btn">Explore Flavours</a>
+        </div>
     </div>
 
     <!-- Flavours Section -->
@@ -246,7 +285,6 @@
             
             <!-- Flavour 1: Blue Pop -->
             <div class="flavour-card">
-                <!-- ഇമേജ് മാറ്റാൻ താഴെ കാണുന്ന src മാറ്റുക (ഉദാഹരണത്തിന്: blueberry.png) -->
                 <img src="blueberry.png" alt="Blue Pop">
                 <h3>Blue Pop</h3>
                 <p>An icy wave of fresh coolness melting on your tongue.</p>
@@ -254,7 +292,6 @@
 
             <!-- Flavour 2: Lemon Splash -->
             <div class="flavour-card">
-                <!-- ഇമേജ് മാറ്റാൻ താഴെ കാണുന്ന src മാറ്റുക (ഉദാഹരണത്തിന്: lemon.png) -->
                 <img src="lemon.png" alt="Lemon Splash">
                 <h3>Lemon Splash</h3>
                 <p>A crystal-clear splash of refreshing zesty lemon.</p>
@@ -262,7 +299,6 @@
 
             <!-- Flavour 3: Grape Lish -->
             <div class="flavour-card">
-                <!-- ഇമേജ് മാറ്റാൻ താഴെ കാണുന്ന src മാറ്റുക (ഉദാഹരണത്തിന്: grape.png) -->
                 <img src="grape.png" alt="Grape Lish">
                 <h3>Grape Lish</h3>
                 <p>The chilling essence of sweet grapes spreading across your palate.</p>
@@ -287,9 +323,15 @@
         </form>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Contact Info -->
     <footer id="contact">
-        <p>&copy; 2026 JUICY ZIP. All rights reserved.</p>
+        <h3>JUICY ZIP</h3>
+        <p>Sparkle, Refresh, Repeat!</p>
+        <div class="footer-contact">
+            <p>Email: <a href="mailto:juicyzipfreshjuice475@gmail.com">juicyzipfreshjuice475@gmail.com</a></p>
+            <p>Phone: <a href="tel:6235591570">6235591570</a></p>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px; color: #777;">&copy; 2026 JUICY ZIP. All rights reserved.</p>
     </footer>
 
 </body>

@@ -16,7 +16,7 @@
             background-color: #111;
         }
 
-        /* Stable and Clear Hero Section with PNG Background */
+        /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)), url('background.png');
             background-size: cover;
@@ -135,7 +135,7 @@
             background-color: #1ebe57;
         }
 
-        /* Flavours Section */
+        /* Flavours Section & Slider CSS */
         .flavours-section {
             padding: 90px 20px;
             background: linear-gradient(to bottom, #111, #1a1a1a);
@@ -172,22 +172,41 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .flavour-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(255, 153, 0, 0.2);
-        }
-
-        .flavour-card img {
+        /* Slider Container */
+        .slider-container {
+            position: relative;
             width: 100%;
             height: 190px;
-            object-fit: cover;
+            overflow: hidden;
             border-radius: 10px;
             margin-bottom: 15px;
             background-color: #444;
             box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .slide-images {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slideAnimation 9s infinite;
+        }
+
+        .slide-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slideAnimation {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(0); }
+            35% { transform: translateX(-100%); }
+            65% { transform: translateX(-100%); }
+            70% { transform: translateX(-200%); }
+            95% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
         }
 
         .flavour-card h3 {
@@ -283,7 +302,7 @@
             width: 100%;
         }
 
-        /* Footer Section with Contact Info */
+        /* Footer & FSSAI License Section */
         footer {
             background-color: #080808;
             color: #aaa;
@@ -317,6 +336,28 @@
         .footer-contact a:hover {
             text-decoration: underline;
         }
+
+        .fssai-badge {
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fssai-badge img {
+            width: 40px;
+            height: auto;
+        }
+
+        .fssai-badge span {
+            color: #25D366;
+            font-weight: bold;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
@@ -347,35 +388,53 @@
         </div>
     </div>
 
-    <!-- Explore Fruit Juice Section -->
+    <!-- Explore Fruit Juice Section with Sliders -->
     <section id="flavours" class="flavours-section">
         <h2>Explore Fruit Juice</h2>
         <div class="flavours-grid">
             
-            <!-- Flavour 1: Blue Pop -->
+            <!-- Flavour 1: Blue Pop with Slider -->
             <div class="flavour-card">
                 <div>
-                    <img src="blueberry.png" alt="Blue Pop">
+                    <div class="slider-container">
+                        <div class="slide-images">
+                            <img src="blueberry.png" alt="Blue Pop 1">
+                            <img src="logo.png" alt="Blue Pop Bottle Concept">
+                            <img src="background.png" alt="Blue Pop Splash">
+                        </div>
+                    </div>
                     <h3>Blue Pop</h3>
                     <p>The tiny chill that melts on your tongue.</p>
                 </div>
                 <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Blue%20Pop%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
 
-            <!-- Flavour 2: Lemon Splash -->
+            <!-- Flavour 2: Lemon Splash with Slider -->
             <div class="flavour-card">
                 <div>
-                    <img src="lemon.png" alt="Lemon Splash">
+                    <div class="slider-container">
+                        <div class="slide-images">
+                            <img src="lemon.png" alt="Lemon Splash 1">
+                            <img src="logo.png" alt="Lemon Bottle Concept">
+                            <img src="background.png" alt="Lemon Splash">
+                        </div>
+                    </div>
                     <h3>Lemon Splash</h3>
                     <p>A zesty lemon splash in crystal-clear water.</p>
                 </div>
                 <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Lemon%20Splash%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
             </div>
 
-            <!-- Flavour 3: Grape Lush -->
+            <!-- Flavour 3: Grape Lush with Slider -->
             <div class="flavour-card">
                 <div>
-                    <img src="grape.png" alt="Grape Lush">
+                    <div class="slider-container">
+                        <div class="slide-images">
+                            <img src="grape.png" alt="Grape Lush 1">
+                            <img src="logo.png" alt="Grape Bottle Concept">
+                            <img src="background.png" alt="Grape Lush Splash">
+                        </div>
+                    </div>
                     <h3>Grape Lush</h3>
                     <p>The cool grape refreshment that spreads across your tongue.</p>
                 </div>
@@ -401,7 +460,7 @@
         </form>
     </section>
 
-    <!-- Footer with Contact Info -->
+    <!-- Footer with Contact Info & FSSAI License Badge -->
     <footer id="contact">
         <h3>JUICY ZIP</h3>
         <p>Sparkle, Refresh, Repeat!</p>
@@ -409,6 +468,16 @@
             <p>Email: <a href="mailto:juicyzipfreshjuice475@gmail.com">juicyzipfreshjuice475@gmail.com</a></p>
             <p>Phone: <a href="tel:6235591570">6235591570</a></p>
         </div>
+
+        <!-- FSSAI Verified Badge Section -->
+        <div class="fssai-badge">
+            <img src="logo.png" alt="FSSAI Verified">
+            <div>
+                <p style="margin:0; font-size: 12px; color:#fff;">FSSAI Certified & Verified</p>
+                <span>100% Safe & Hygienic Quality</span>
+            </div>
+        </div>
+
         <p style="margin-top: 20px; font-size: 12px; color: #777;">&copy; 2026 JUICY ZIP. All rights reserved.</p>
     </footer>
 

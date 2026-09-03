@@ -51,10 +51,11 @@
             color: #ff9900;
         }
 
-        /* Hero Section */
+        /* Hero Section with Moving Video-like Background Effect */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('background.png');
             background-size: cover;
+            background-repeat: no-repeat;
             background-position: center;
             height: 100vh;
             display: flex;
@@ -63,6 +64,24 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+            animation: backgroundMotion 20s ease-in-out infinite alternate;
+        }
+
+        /* Background Water & Wind Moving Effect (Like a Video) */
+        @keyframes backgroundMotion {
+            0% {
+                background-position: center top;
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+            100% {
+                background-position: center bottom;
+                transform: scale(1);
+            }
         }
 
         .logo-container img {
@@ -70,6 +89,12 @@
             max-width: 100%;
             margin-bottom: 15px;
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+            animation: floatLogo 3s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         h1 {
@@ -380,7 +405,7 @@
                     <p>The cool grape refreshment that spreads across your palate.</p>
                 </div>
                 <div class="card-buttons">
-                    <a href="https://wa.me/916235591570?text=`Hi,%20I%20want%20to%20buy%20Grape%20Lush%20(₹99).`" target="_blank" class="card-btn btn-buy">Buy Now</a>
+                    <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20buy%20Grape%20Lush%20(₹99)." target="_blank" class="card-btn btn-buy">Buy Now</a>
                     <a href="https://wa.me/916235591570?text=Hi,%20I%20have%20an%20inquiry%20regarding%20Grape%20Lush." target="_blank" class="card-btn btn-wa-order">WhatsApp</a>
                 </div>
             </div>

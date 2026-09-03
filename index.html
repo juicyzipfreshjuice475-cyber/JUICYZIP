@@ -7,58 +7,43 @@
     <style>
         * {
             box-sizing: border-box;
-        }
-        body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+        }
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
-            background-color: #111;
+            background-color: #0d0d0d;
+            color: #fff;
         }
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)), url('background.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
+        /* Header / Navbar */
         header {
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(10, 10, 10, 0.9);
             backdrop-filter: blur(10px);
             padding: 15px 0;
-            text-align: center;
-            width: 100%;
             position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav ul {
-            margin: 0;
-            padding: 0;
             list-style: none;
+            text-align: center;
         }
 
         nav li {
             display: inline-block;
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
-            font-weight: bold;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
@@ -66,60 +51,60 @@
             color: #ff9900;
         }
 
-        .hero-content {
-            flex: 1;
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('background.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 100px 20px 20px 20px;
-            z-index: 10;
+            padding: 0 20px;
         }
 
         .logo-container img {
-            width: 240px;
+            width: 220px;
             max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
+            margin-bottom: 15px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
         }
 
         h1 {
-            font-size: 42px;
+            font-size: 45px;
             color: #fff;
-            margin: 10px 0;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+            margin-bottom: 10px;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
         }
 
-        p {
+        .hero-section p {
             font-size: 16px;
-            color: #fff;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+            color: #ddd;
+            margin-bottom: 25px;
         }
 
         .btn-group {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
             background-color: #ff9900;
             color: #fff;
             border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 16px;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 15px;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
             text-decoration: none;
-            display: inline-block;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
         }
 
         .btn:hover {
@@ -129,23 +114,23 @@
 
         .btn-whatsapp {
             background-color: #25D366;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
             background-color: #1ebe57;
         }
 
-        /* Flavours Section & Slider CSS */
+        /* Products / Flavours Section */
         .flavours-section {
-            padding: 90px 20px;
-            background: linear-gradient(to bottom, #111, #1a1a1a);
-            color: #fff;
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #0d0d0d, #161616);
             text-align: center;
         }
 
         .flavours-section h2 {
-            font-size: 38px;
-            margin-bottom: 50px;
+            font-size: 36px;
+            margin-bottom: 40px;
             color: #ff9900;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -155,35 +140,38 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 35px;
-            max-width: 1150px;
+            gap: 30px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .flavour-card {
-            background: rgba(42, 42, 42, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(30, 30, 30, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 15px;
-            padding: 25px;
-            width: 320px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            text-align: center;
+            border-radius: 16px;
+            padding: 20px;
+            width: 330px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: left;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s;
         }
 
-        /* Slider Container */
+        .flavour-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Image Slider inside Card */
         .slider-container {
             position: relative;
             width: 100%;
-            height: 190px;
+            height: 200px;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 15px;
-            background-color: #444;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            background-color: #222;
         }
 
         .slide-images {
@@ -194,7 +182,7 @@
         }
 
         .slide-images img {
-            width: 100%;
+            width: 33.3333%;
             height: 100%;
             object-fit: cover;
         }
@@ -202,283 +190,218 @@
         @keyframes slideAnimation {
             0% { transform: translateX(0); }
             30% { transform: translateX(0); }
-            35% { transform: translateX(-100%); }
-            65% { transform: translateX(-100%); }
-            70% { transform: translateX(-200%); }
-            95% { transform: translateX(-200%); }
+            35% { transform: translateX(-33.3333%); }
+            65% { transform: translateX(-33.3333%); }
+            70% { transform: translateX(-66.6666%); }
+            95% { transform: translateX(-66.6666%); }
             100% { transform: translateX(0); }
         }
 
         .flavour-card h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
+            font-size: 22px;
             color: #ff9900;
+            margin-bottom: 8px;
+        }
+
+        .flavour-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 10px;
         }
 
         .flavour-card p {
             font-size: 14px;
-            color: #ddd;
+            color: #bbb;
             margin-bottom: 20px;
-            text-shadow: none;
             line-height: 1.5;
         }
 
-        .order-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            display: inline-block;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-        }
-
-        .order-btn:hover {
-            background-color: #1ebe57;
-            transform: scale(1.05);
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            padding: 90px 20px;
-            background-color: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-
-        .reviews-section h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: #ff9900;
-        }
-
-        .reviews-section > p {
-            text-shadow: none;
-            margin-bottom: 30px;
-        }
-
-        .review-form {
-            max-width: 520px;
-            margin: 0 auto;
+        .card-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            text-align: left;
-            background-color: #252525;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            gap: 10px;
         }
 
-        .review-form label {
-            font-size: 14px;
+        .card-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 13px;
             font-weight: bold;
-            color: #ccc;
-        }
-
-        .review-form input, .review-form textarea {
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #444;
-            background-color: #111;
-            color: #fff;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .review-form input:focus, .review-form textarea:focus {
-            border-color: #ff9900;
-            outline: none;
-        }
-
-        .review-form button {
-            align-self: center;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        /* Footer & FSSAI License Section */
-        footer {
-            background-color: #080808;
-            color: #aaa;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-buy {
+            background-color: #ff9900;
+            color: #fff;
+        }
+
+        .btn-buy:hover {
+            background-color: #e68a00;
+        }
+
+        .btn-wa-order {
+            background-color: #25D366;
+            color: #fff;
+        }
+
+        .btn-wa-order:hover {
+            background-color: #1ebe57;
+        }
+
+        /* Footer & FSSAI Badge */
+        footer {
+            background-color: #050505;
+            color: #888;
+            text-align: center;
+            padding: 50px 20px;
             border-top: 1px solid #222;
         }
 
         footer h3 {
             color: #ff9900;
             margin-bottom: 10px;
-            font-size: 22px;
         }
 
-        footer p {
-            margin: 6px 0;
-            text-shadow: none;
-            color: #bbb;
-        }
-
-        .footer-contact {
-            margin-top: 20px;
-        }
-
-        .footer-contact a {
-            color: #ff9900;
-            text-decoration: none;
-        }
-
-        .footer-contact a:hover {
-            text-decoration: underline;
-        }
-
-        .fssai-badge {
-            margin-top: 20px;
+        .fssai-box {
+            margin: 20px auto;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 15px;
-            border-radius: 8px;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
-        .fssai-badge img {
-            width: 40px;
+        .fssai-box img {
+            width: 35px;
             height: auto;
         }
 
-        .fssai-badge span {
+        .fssai-text {
+            text-align: left;
+        }
+
+        .fssai-text p {
+            font-size: 12px;
+            color: #fff;
+            margin: 0;
+        }
+
+        .fssai-text span {
+            font-size: 11px;
             color: #25D366;
             font-weight: bold;
-            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#flavours">Explore Fruit Juice</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#flavours">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="hero-content">
-            <div class="logo-container">
-                <img src="logo.png" alt="JUICY ZIP Logo">
-            </div>
-            <h1>JUICY ZIP</h1>
-            <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
-            <div class="btn-group">
-                <a href="#flavours" class="btn">Explore Fruit Juice</a>
-                <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20order%20JuicyZip%20drinks!" target="_blank" class="btn btn-whatsapp">Order via WhatsApp</a>
-            </div>
+    <section class="hero-section">
+        <div class="logo-container">
+            <img src="logo.png" alt="JUICY ZIP Logo">
         </div>
-    </div>
+        <h1>JUICY ZIP</h1>
+        <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
+        <div class="btn-group">
+            <a href="#flavours" class="btn">Explore Products</a>
+            <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20order%20JuicyZip!" target="_blank" class="btn btn-whatsapp">Order on WhatsApp</a>
+        </div>
+    </section>
 
-    <!-- Explore Fruit Juice Section with Sliders -->
     <section id="flavours" class="flavours-section">
-        <h2>Explore Fruit Juice</h2>
+        <h2>Our Products</h2>
         <div class="flavours-grid">
             
-            <!-- Flavour 1: Blue Pop with Slider -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
                         <div class="slide-images">
                             <img src="blueberry.png" alt="Blue Pop 1">
-                            <img src="logo.png" alt="Blue Pop Bottle Concept">
-                            <img src="background.png" alt="Blue Pop Splash">
+                            <img src="logo.png" alt="Blue Pop Logo">
+                            <img src="background.png" alt="Blue Pop Background">
                         </div>
                     </div>
                     <h3>Blue Pop</h3>
+                    <div class="price">₹99</div>
                     <p>The tiny chill that melts on your tongue.</p>
                 </div>
-                <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Blue%20Pop%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
+                <div class="card-buttons">
+                    <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20buy%20Blue%20Pop%20(₹99)." target="_blank" class="card-btn btn-buy">Buy Now</a>
+                    <a href="https://wa.me/916235591570?text=Hi,%20I%20have%20an%20inquiry%20regarding%20Blue%20Pop." target="_blank" class="card-btn btn-wa-order">WhatsApp</a>
+                </div>
             </div>
 
-            <!-- Flavour 2: Lemon Splash with Slider -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
                         <div class="slide-images">
                             <img src="lemon.png" alt="Lemon Splash 1">
-                            <img src="logo.png" alt="Lemon Bottle Concept">
-                            <img src="background.png" alt="Lemon Splash">
+                            <img src="logo.png" alt="Lemon Logo">
+                            <img src="background.png" alt="Lemon Background">
                         </div>
                     </div>
                     <h3>Lemon Splash</h3>
+                    <div class="price">₹99</div>
                     <p>A zesty lemon splash in crystal-clear water.</p>
                 </div>
-                <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Lemon%20Splash%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
+                <div class="card-buttons">
+                    <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20buy%20Lemon%20Splash%20(₹99)." target="_blank" class="card-btn btn-buy">Buy Now</a>
+                    <a href="https://wa.me/916235591570?text=Hi,%20I%20have%20an%20inquiry%20regarding%20Lemon%20Splash." target="_blank" class="card-btn btn-wa-order">WhatsApp</a>
+                </div>
             </div>
 
-            <!-- Flavour 3: Grape Lush with Slider -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
                         <div class="slide-images">
                             <img src="grape.png" alt="Grape Lush 1">
-                            <img src="logo.png" alt="Grape Bottle Concept">
-                            <img src="background.png" alt="Grape Lush Splash">
+                            <img src="logo.png" alt="Grape Logo">
+                            <img src="background.png" alt="Grape Background">
                         </div>
                     </div>
                     <h3>Grape Lush</h3>
-                    <p>The cool grape refreshment that spreads across your tongue.</p>
+                    <div class="price">₹99</div>
+                    <p>The cool grape refreshment that spreads across your palate.</p>
                 </div>
-                <a href="https://wa.me/916235591570?text=Hi,%20I%20would%20like%20to%20order%20Grape%20Lush%20flavour." target="_blank" class="order-btn">Order on WhatsApp</a>
+                <div class="card-buttons">
+                    <a href="https://wa.me/916235591570?text=`Hi,%20I%20want%20to%20buy%20Grape%20Lush%20(₹99).`" target="_blank" class="card-btn btn-buy">Buy Now</a>
+                    <a href="https://wa.me/916235591570?text=Hi,%20I%20have%20an%20inquiry%20regarding%20Grape%20Lush." target="_blank" class="card-btn btn-wa-order">WhatsApp</a>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Customer Reviews Section -->
-    <section id="reviews" class="reviews-section">
-        <h2>Customer Reviews</h2>
-        <p>We would love to hear your thoughts about JuicyZip!</p>
-        
-        <form class="review-form" action="#" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-            <label for="review">Your Review / Feedback:</label>
-            <textarea id="review" name="review" rows="4" placeholder="Share your experience..." required></textarea>
-
-            <button type="submit" class="btn">Submit Review</button>
-        </form>
-    </section>
-
-    <!-- Footer with Contact Info & FSSAI License Badge -->
     <footer id="contact">
         <h3>JUICY ZIP</h3>
         <p>Sparkle, Refresh, Repeat!</p>
-        <div class="footer-contact">
-            <p>Email: <a href="mailto:juicyzipfreshjuice475@gmail.com">juicyzipfreshjuice475@gmail.com</a></p>
-            <p>Phone: <a href="tel:6235591570">6235591570</a></p>
-        </div>
+        <p>Email: juicyzipfreshjuice475@gmail.com | Phone: 6235591570</p>
 
-        <!-- FSSAI Verified Badge Section -->
-        <div class="fssai-badge">
-            <img src="logo.png" alt="FSSAI Verified">
-            <div>
-                <p style="margin:0; font-size: 12px; color:#fff;">FSSAI Certified & Verified</p>
-                <span>100% Safe & Hygienic Quality</span>
+        <div class="fssai-box">
+            <img src="logo.png" alt="FSSAI">
+            <div class="fssai-text">
+                <p>FSSAI Licensed & Verified</p>
+                <span>100% Safe Quality</span>
             </div>
         </div>
 
-        <p style="margin-top: 20px; font-size: 12px; color: #777;">&copy; 2026 JUICY ZIP. All rights reserved.</p>
+        <p style="font-size: 12px; color: #555; margin-top: 15px;">&copy; 2026 JUICY ZIP. All rights reserved.</p>
     </footer>
 
 </body>

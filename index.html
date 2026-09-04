@@ -13,7 +13,7 @@
         body, html {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
-            background-color: #111;
+            background-color: #0b0b0b;
             color: #fff;
             width: 100%;
             height: 100%;
@@ -22,7 +22,7 @@
 
         header {
             background-color: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             padding: 15px 0;
             position: fixed;
             top: 0;
@@ -53,6 +53,7 @@
             color: #ff9900;
         }
 
+        /* Hero Section with PNG Waterfall Background & Parallax 3D Feel */
         .hero-section {
             position: relative;
             height: 100vh;
@@ -64,20 +65,16 @@
             text-align: center;
             padding: 0 20px;
             overflow: hidden;
-            background: #000;
+            background-image: url('waterfall-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transform: scale(1);
+            transition: transform 0.5s ease-out;
         }
 
-        .bg-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: -2;
+        .hero-section:hover {
+            transform: scale(1.02);
         }
 
         .hero-overlay {
@@ -86,40 +83,46 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: -1;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInZoom 1.2s ease-in-out;
+        }
+
+        @keyframes fadeInZoom {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .logo-container img {
-            width: 200px;
+            width: 170px;
             max-width: 100%;
             margin-bottom: 15px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.9));
+            transition: transform 0.4s ease;
+        }
+
+        .logo-container img:hover {
+            transform: rotate(3deg) scale(1.08);
         }
 
         h1 {
-            font-size: 45px;
+            font-size: 48px;
             color: #fff;
             margin-bottom: 10px;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            letter-spacing: 3px;
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.9);
         }
 
         .hero-section p {
-            font-size: 16px;
-            color: #ddd;
+            font-size: 17px;
+            color: #e0e0e0;
             margin-bottom: 25px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-        }
-
-        .audio-hint {
-            font-size: 13px;
-            color: #ff9900;
-            margin-bottom: 15px;
-            background: rgba(0,0,0,0.6);
-            padding: 5px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,153,0,0.3);
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.9);
         }
 
         .btn-group {
@@ -133,112 +136,105 @@
             background-color: #ff9900;
             color: #fff;
             border: none;
-            padding: 12px 28px;
+            padding: 12px 30px;
             border-radius: 30px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 153, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
         }
 
         .btn:hover {
             background-color: #e68a00;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 153, 0, 0.6);
         }
 
         .btn-whatsapp {
             background-color: #25D366;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
         }
 
         .btn-whatsapp:hover {
             background-color: #1ebe57;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
 
+        /* Products Section with 3D Card Hover Effects */
         .flavours-section {
-            padding: 100px 20px;
-            background: linear-gradient(to bottom, #0d0d0d, #161616);
+            padding: 110px 20px;
+            background: linear-gradient(to bottom, #0b0b0b, #151515);
             text-align: center;
         }
 
         .flavours-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
+            font-size: 38px;
+            margin-bottom: 50px;
             color: #ff9900;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .flavours-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .flavour-card {
-            background: rgba(30, 30, 30, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 20px;
-            width: 330px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: rgba(25, 25, 25, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 22px;
+            width: 340px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             text-align: left;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .flavour-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 153, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(255, 153, 0, 0.2);
         }
 
-        .slider-container {
+        .image-container {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            background-color: #222;
+            border-radius: 14px;
+            margin-bottom: 18px;
+            background-color: #1a1a1a;
         }
 
-        .slide-images {
-            display: flex;
-            width: 300%;
-            height: 100%;
-            animation: slideAnimation 9s infinite;
-        }
-
-        .slide-images img {
-            width: 33.3333%;
+        .image-container img {
+            width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        @keyframes slideAnimation {
-            0% { transform: translateX(0); }
-            30% { transform: translateX(0); }
-            35% { transform: translateX(-33.3333%); }
-            65% { transform: translateX(-33.3333%); }
-            70% { transform: translateX(-66.6666%); }
-            95% { transform: translateX(-66.6666%); }
-            100% { transform: translateX(0); }
+        .flavour-card:hover .image-container img {
+            transform: scale(1.1);
         }
 
         .flavour-card h3 {
-            font-size: 22px;
+            font-size: 24px;
             color: #ff9900;
             margin-bottom: 8px;
         }
 
         .flavour-card .price {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: bold;
             color: #fff;
             margin-bottom: 10px;
@@ -246,26 +242,26 @@
 
         .flavour-card p {
             font-size: 14px;
-            color: #bbb;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            color: #ccc;
+            margin-bottom: 22px;
+            line-height: 1.6;
         }
 
         .card-buttons {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .card-btn {
             flex: 1;
-            padding: 10px;
-            border-radius: 20px;
+            padding: 11px;
+            border-radius: 25px;
             font-size: 13px;
             font-weight: bold;
             text-align: center;
             text-decoration: none;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.3s;
         }
 
         .btn-buy {
@@ -290,7 +286,7 @@
             background-color: #050505;
             color: #888;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             border-top: 1px solid #222;
         }
 
@@ -300,18 +296,18 @@
         }
 
         .fssai-box {
-            margin: 20px auto;
+            margin: 25px auto;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.03);
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 12px 25px;
+            border-radius: 12px;
         }
 
         .fssai-box img {
-            width: 35px;
+            width: 40px;
             height: auto;
         }
 
@@ -320,7 +316,7 @@
         }
 
         .fssai-text p {
-            font-size: 12px;
+            font-size: 13px;
             color: #fff;
             margin: 0;
         }
@@ -339,31 +335,24 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#flavours">Products</a></li>
-                <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero-section" id="heroSec">
-        <!-- ഇവിടെ വീഡിയോയുടെ പേര് vid.mp4 എന്ന് നൽകിയിരിക്കുന്നു -->
-        <video autoplay muted loop playsinline class="bg-video" id="bgVideo">
-            <source src="vid.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
+    <section class="hero-section">
         <div class="hero-overlay"></div>
-
-        <div class="logo-container">
-            <img src="logo.png" alt="JUICY ZIP Logo">
-        </div>
-        <h1>JUICY ZIP</h1>
-        <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
-        
-        <div class="audio-hint" id="audioHint">🔊 Click anywhere on the screen to enable background sound!</div>
-
-        <div class="btn-group">
-            <a href="#flavours" class="btn">Explore Products</a>
-            <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20order%20JuicyZip!" target="_blank" class="btn btn-whatsapp">Order on WhatsApp</a>
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="JUICY ZIP Logo">
+            </div>
+            <h1>JUICY ZIP</h1>
+            <p>Sparkle, Refresh, Repeat! Experience the ultimate fruit juice.</p>
+            
+            <div class="btn-group">
+                <a href="#flavours" class="btn">Explore Products</a>
+                <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20order%20JuicyZip!" target="_blank" class="btn btn-whatsapp">Order on WhatsApp</a>
+            </div>
         </div>
     </section>
 
@@ -371,18 +360,15 @@
         <h2>Our Products</h2>
         <div class="flavours-grid">
             
+            <!-- Blueberry Card -->
             <div class="flavour-card">
                 <div>
-                    <div class="slider-container">
-                        <div class="slide-images">
-                            <img src="blueberry.png" alt="Blue Pop 1">
-                            <img src="logo.png" alt="Blue Pop Logo">
-                            <img src="logo.png" alt="Blue Pop Logo 2">
-                        </div>
+                    <div class="image-container">
+                        <img src="blueberry.png" alt="Blue Pop">
                     </div>
                     <h3>Blue Pop</h3>
                     <div class="price">₹99</div>
-                    <p>The tiny chill that melts on your tongue.</p>
+                    <p>The tiny chill that melts on your tongue with rich blueberry refreshment.</p>
                 </div>
                 <div class="card-buttons">
                     <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20buy%20Blue%20Pop%20(₹99)." target="_blank" class="card-btn btn-buy">Buy Now</a>
@@ -390,18 +376,15 @@
                 </div>
             </div>
 
+            <!-- Lemon Card -->
             <div class="flavour-card">
                 <div>
-                    <div class="slider-container">
-                        <div class="slide-images">
-                            <img src="lemon.png" alt="Lemon Splash 1">
-                            <img src="logo.png" alt="Lemon Logo">
-                            <img src="logo.png" alt="Lemon Logo 2">
-                        </div>
+                    <div class="image-container">
+                        <img src="lemon.png" alt="Lemon Splash">
                     </div>
                     <h3>Lemon Splash</h3>
                     <div class="price">₹99</div>
-                    <p>A zesty lemon splash in crystal-clear water.</p>
+                    <p>A zesty lemon splash delivering ultimate refreshment and energy.</p>
                 </div>
                 <div class="card-buttons">
                     <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20buy%20Lemon%20Splash%20(₹99)." target="_blank" class="card-btn btn-buy">Buy Now</a>
@@ -409,22 +392,19 @@
                 </div>
             </div>
 
+            <!-- Grape Card -->
             <div class="flavour-card">
                 <div>
-                    <div class="slider-container">
-                        <div class="slide-images">
-                            <img src="grape.png" alt="Grape Lush 1">
-                            <img src="logo.png" alt="Grape Logo">
-                            <img src="logo.png" alt="Grape Logo 2">
-                        </div>
+                    <div class="image-container">
+                        <img src="grape.png" alt="Grape Lush">
                     </div>
                     <h3>Grape Lush</h3>
                     <div class="price">₹99</div>
-                    <p>The cool grape refreshment that spreads across your palate.</p>
+                    <p>The cool grape refreshment that spreads rich flavor across your palate.</p>
                 </div>
                 <div class="card-buttons">
                     <a href="https://wa.me/916235591570?text=Hi,%20I%20want%20to%20buy%20Grape%20Lush%20(₹99)." target="_blank" class="card-btn btn-buy">Buy Now</a>
-                    <a href="https://wa.me/916235591570?text=Hi,%20I%20have%20an%20inquiry%20regarding%20Grape%20Lush." target="_blank" class="card-btn btn-wa-order">WhatsApp</a>
+                    <a href="https://wa.me/916235591570?text=Hii,%20I%20have%20an%20inquiry%20regarding%20Grape%20Lush." target="_blank" class="card-btn btn-wa-order">WhatsApp</a>
                 </div>
             </div>
 
@@ -446,17 +426,6 @@
 
         <p style="font-size: 12px; color: #555; margin-top: 15px;">&copy; 2026 JUICY ZIP. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('click', function() {
-            var video = document.getElementById('bgVideo');
-            var hint = document.getElementById('audioHint');
-            if (video.muted) {
-                video.muted = false;
-                if(hint) hint.style.display = 'none';
-            }
-        }, { once: true });
-    </script>
 
 </body>
 </html>

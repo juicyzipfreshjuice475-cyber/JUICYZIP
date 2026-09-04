@@ -19,7 +19,7 @@
 
         /* Header / Navbar */
         header {
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(10, 10, 10, 0.85);
             backdrop-filter: blur(10px);
             padding: 15px 0;
             position: fixed;
@@ -51,12 +51,9 @@
             color: #ff9900;
         }
 
-        /* Hero Section with Moving Video-like Background Effect */
+        /* Hero Section with Live Video Background */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('background.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -64,24 +61,32 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            position: relative;
             overflow: hidden;
-            animation: backgroundMotion 20s ease-in-out infinite alternate;
         }
 
-        /* Background Water & Wind Moving Effect (Like a Video) */
-        @keyframes backgroundMotion {
-            0% {
-                background-position: center top;
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.03);
-            }
-            100% {
-                background-position: center bottom;
-                transform: scale(1);
-            }
+        /* Background Video Styling */
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* Dark Overlay on Video for Better Readability */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75));
+            z-index: -1;
         }
 
         .logo-container img {
@@ -89,12 +94,6 @@
             max-width: 100%;
             margin-bottom: 15px;
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
-            animation: floatLogo 3s ease-in-out infinite;
-        }
-
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
         }
 
         h1 {
@@ -326,6 +325,7 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <nav>
             <ul>
@@ -337,7 +337,16 @@
         </nav>
     </header>
 
+    <!-- Hero Section with Live Video Background -->
     <section class="hero-section">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="hero-overlay"></div>
+
+        <!-- Content -->
         <div class="logo-container">
             <img src="logo.png" alt="JUICY ZIP Logo">
         </div>
@@ -349,10 +358,12 @@
         </div>
     </section>
 
+    <!-- Products / Flavours Section with Image Sliders -->
     <section id="flavours" class="flavours-section">
         <h2>Our Products</h2>
         <div class="flavours-grid">
             
+            <!-- Product 1: Blue Pop -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
@@ -372,6 +383,7 @@
                 </div>
             </div>
 
+            <!-- Product 2: Lemon Splash -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
@@ -391,6 +403,7 @@
                 </div>
             </div>
 
+            <!-- Product 3: Grape Lush -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
@@ -413,11 +426,13 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer id="contact">
         <h3>JUICY ZIP</h3>
         <p>Sparkle, Refresh, Repeat!</p>
         <p>Email: juicyzipfreshjuice475@gmail.com | Phone: 6235591570</p>
 
+        <!-- FSSAI Badge -->
         <div class="fssai-box">
             <img src="logo.png" alt="FSSAI">
             <div class="fssai-text">

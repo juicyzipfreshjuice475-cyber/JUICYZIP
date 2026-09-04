@@ -20,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* Header / Navbar */
         header {
             background-color: rgba(10, 10, 10, 0.85);
             backdrop-filter: blur(10px);
@@ -54,7 +53,6 @@
             color: #ff9900;
         }
 
-        /* Hero Section */
         .hero-section {
             position: relative;
             height: 100vh;
@@ -69,7 +67,6 @@
             background: #000;
         }
 
-        /* Background Video */
         .bg-video {
             position: absolute;
             top: 50%;
@@ -83,7 +80,6 @@
             z-index: -2;
         }
 
-        /* Dark Overlay for Text Clarity */
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -161,7 +157,6 @@
             background-color: #1ebe57;
         }
 
-        /* Products / Flavours Section */
         .flavours-section {
             padding: 100px 20px;
             background: linear-gradient(to bottom, #0d0d0d, #161616);
@@ -203,7 +198,6 @@
             transform: translateY(-5px);
         }
 
-        /* Image Slider inside Card */
         .slider-container {
             position: relative;
             width: 100%;
@@ -292,7 +286,6 @@
             background-color: #1ebe57;
         }
 
-        /* Footer */
         footer {
             background-color: #050505;
             color: #888;
@@ -341,7 +334,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <nav>
             <ul>
@@ -353,15 +345,14 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Video & Audio Support -->
     <section class="hero-section" id="heroSec">
+        <!-- ഇവിടെ വീഡിയോയുടെ പേര് vid.mp4 എന്ന് നൽകിയിരിക്കുന്നു -->
         <video autoplay muted loop playsinline class="bg-video" id="bgVideo">
-            <source src="background-video.mp4" type="video/mp4">
+            <source src="vid.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
         <div class="hero-overlay"></div>
 
-        <!-- Content over Video -->
         <div class="logo-container">
             <img src="logo.png" alt="JUICY ZIP Logo">
         </div>
@@ -376,12 +367,10 @@
         </div>
     </section>
 
-    <!-- Products / Flavours Section -->
     <section id="flavours" class="flavours-section">
         <h2>Our Products</h2>
         <div class="flavours-grid">
             
-            <!-- Product 1: Blue Pop -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
@@ -401,7 +390,6 @@
                 </div>
             </div>
 
-            <!-- Product 2: Lemon Splash -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
@@ -421,7 +409,6 @@
                 </div>
             </div>
 
-            <!-- Product 3: Grape Lush -->
             <div class="flavour-card">
                 <div>
                     <div class="slider-container">
@@ -444,13 +431,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact">
         <h3>JUICY ZIP</h3>
         <p>Sparkle, Refresh, Repeat!</p>
         <p>Email: juicyzipfreshjuice475@gmail.com | Phone: 6235591570</p>
 
-        <!-- FSSAI Badge -->
         <div class="fssai-box">
             <img src="logo.png" alt="FSSAI">
             <div class="fssai-text">
@@ -462,13 +447,12 @@
         <p style="font-size: 12px; color: #555; margin-top: 15px;">&copy; 2026 JUICY ZIP. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript to Enable Video Audio on User Click -->
     <script>
         document.addEventListener('click', function() {
             var video = document.getElementById('bgVideo');
             var hint = document.getElementById('audioHint');
             if (video.muted) {
-                video.muted = false; // അൺമ്യൂട്ട് ചെയ്ത് വെള്ളച്ചാട്ടത്തിന്റെ സൗണ്ട് കേൾപ്പിക്കുന്നു
+                video.muted = false;
                 if(hint) hint.style.display = 'none';
             }
         }, { once: true });
